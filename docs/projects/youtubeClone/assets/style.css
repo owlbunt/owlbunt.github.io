@@ -1,0 +1,37 @@
+/* Body */
+body{
+    margin: 0;
+    padding: 0;
+    height: 100dvh;
+    width: 100%;
+}
+
+/* Header */
+#header{
+    height: 56px;
+    background: yellow;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* Header Left */
+.menuIcon img{
+    height: 25px;
+}
+.youtubeLogo img{
+    height: 30px;
+}
+
+/* Header Right */
+.profile img{
+    height: 30px;
+    width: auto;
+    aspect-ratio: 1/1;
+}
+.create img, .notif img{
+    height: 25px;
+    width: auto;
+    aspect-ratio: 1/1;
+}

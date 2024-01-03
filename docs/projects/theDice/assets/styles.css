@@ -1,0 +1,160 @@
+/* Universal */
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background: url("images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Container */
+.container{
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  padding: 0;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+/* Shuffle Box */
+.diceBox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 60px;
+  background: #fefefe;
+  position: absolute;
+  left: calc(50% - 30px);
+  border-radius: 100%;
+  border: 1px solid #cdcdcd;
+  padding: 20px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s; /* Safari */
+}
+
+.diceBox:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 4em;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  box-shadow: 0 0 10px 40px white;
+}
+
+.diceBox:active:after {
+  box-shadow: 0 0 0 0 white;
+  position: absolute;
+  border-radius: 4em;
+  left: 0;
+  top:0;
+  opacity: 1;
+  transition: 0s;
+}
+
+/* Section One */
+.sectionOne{
+  min-height: 400px;
+  position:relative;
+  border: 1px solid #fefefeb9;
+  border-right: 0px;
+  border-radius: 15px 0 0 15px;
+  backdrop-filter: blur(10px);
+  background: #00800060;
+}
+
+/* Dice One */
+.diceOne {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Section Two */
+.sectionTwo{
+  min-height: 400px;
+  position: relative;
+  border: 1px solid #fefefeb9;
+  border-radius: 0 15px 15px 0;
+  backdrop-filter: blur(10px);
+  background: #00800060;
+}
+
+/* Dice Two */
+.diceTwo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Image */
+img{
+  height: 80%;
+  width: auto;
+}
+
+/* Points */
+.points{
+  display: inline-block;
+  height: 30px;
+  width: 130px;
+  background: #fefefe81;
+  color: #000000;
+  border-radius: 15px;
+  text-align: center;
+  margin: 20px 10px;
+  line-height: 30px;
+  font-size: 13px;
+  border: 1px solid #fefefeb9;
+}
+.points::before{
+  display: inline-block;
+  content:"SCORE :  ";
+  font-size: 13px;
+}
+
+/* Rotate */
+.rotate{
+  transform: rotate(360deg);
+}
+
+/* Responsive */
+@media screen and (max-width: 575px) {
+  .sectionOne{
+    height: 50vh;
+    border-radius: 0;
+  }
+  .sectionTwo{
+    height: 50vh;
+    border-radius: 0;
+  }
+  
+}
+

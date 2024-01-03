@@ -1,0 +1,109 @@
+/* Root Section */
+:root{
+    font-size: 16px;
+}
+
+/* Universal ( Remove Arrows/Spinners ) */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Body */
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main Container */
+.container-fulid{
+    height: 100dvh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+}
+
+/* Calculator Body */
+.calBody{
+    height:100vh;
+    width: 100%;
+    border: 0;
+}
+
+/* Section Top*/
+section.top{
+    height: 30%;
+    background: #212529;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+/* Input */
+section.top input{
+    color: #ffffff;
+    height: 4rem;
+    width:100%;
+    font-size:5rem;
+    text-align:right;
+    border: 0;
+    background: var(--bs-bg-dark);
+    padding: 0 14px;
+}
+.top input:focus{
+    background: var(--bs-bg-dark);
+    border: 0;
+    outline: 0;
+}
+
+/* section bottom */
+section.bottom{
+    height: 70%;
+    padding: 0 10px;
+    background: #212529;
+    display: flex;
+    align-items: center;
+}
+/* Buttons Section*/
+.buttons{
+    width: 100%;
+}
+/* Buttons Row */
+.buttons .btnRow{
+    display: flex;
+}
+/* Buttons */
+.button{
+    height:auto;
+    width: 25%;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    margin: 4px;
+    background: #313131;
+    color: #ffffff;
+    border: none;
+    font-size: 2rem;
+    padding: 0;
+    transition: filter 0.2s ease;
+}
+
+/* Button click and active animation */
+.buttonAni{
+    filter: brightness(2);
+}
+
+
+/* Resposive */
+@media screen and (min-width: 480px){
+    /* Calculator Body */
+    .calBody{
+         max-height:720px;
+         max-width:360px;
+         border-radius: 20px;
+         overflow: hidden;
+         border:2px solid #fefefea3;
+        }
+}

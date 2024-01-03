@@ -1,0 +1,176 @@
+:root{
+  --background:#28282B; 
+  --foreground : #fefefe;
+  --sStart: 0;  /* Don't Change or Delete */
+  --sEnd : 0;   /* Don't Change or Delete */
+  --mStart : 0; /* Don't Change or Delete */
+  --mEnd : 0;   /* Don't Change or Delete */
+}
+
+/* Default Values */
+html, body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto';
+}
+
+/* Main Container */
+.container{
+  height: 100vh;
+  width: 100vw;
+  background:var(--background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Clock Body */
+.clockBody{
+  background:var(--background);
+  height: auto;
+  width: 80vw;
+  aspect-ratio: 1/1;
+  max-width: 400px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+}
+.clockBody::before{
+  display: flex;
+  align-self: center;
+  content: '';
+  background:var(--indicator ,red);
+  height: .5rem;
+  width: .5rem;
+  position: absolute;
+  left:30%;
+  z-index: 6;
+  border-radius: 100%;
+}
+
+.clockBody::after{
+  box-sizing: border-box;
+  display: inline-block;
+  content: '';
+  height: 3rem;
+  width: 35%;
+  background: transparent;
+  border: 2px solid var(--foreground);
+  box-shadow: 0px 15px 10px -2px var(--background), 0px -10px 10px -2px var(--background);
+  border-right:0;
+  border-radius: 3rem 0 0 3rem;
+  position:absolute;
+  z-index: 5;
+  right: 0;
+}
+
+/* Second */
+.s{
+  height:100%;
+  width: 100%;
+  background: url("images/clock.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 100%;
+  z-index: 3;
+  position: absolute;
+  top:0;
+  left:0;
+  animation: second 60s infinite linear;
+}
+.s::before{
+  display: inline-block;
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: url('images/clockBg.svg');
+  opacity: .4;
+}
+
+/* Minute */
+.m{
+  height: auto;
+  width: 70%;
+  aspect-ratio: 1/1;
+  z-index: 3;
+  position: absolute;
+}
+.m::after{
+  display: flex;
+  content: attr(minute);
+  height: 3rem;
+  width: auto;
+  padding: 0 .5rem;
+  background:var(--background);
+  position:absolute;
+  top:calc(50% - 1.5rem);
+  right:-4%;
+  z-index: 4;
+  align-items: center;
+  justify-content:center;
+  color: var(--foreground);
+  font-size: 2rem;
+  font-weight: bold;
+}
+.m div{
+  height: 100%;
+  width: 100%;
+  background:url('images/clock.svg');
+  background-size: cover;
+  background-repeat:no-repeat; 
+  border-radius: 100%;
+  z-index: 3;
+  position:absolute;
+  animation: minute 3600s infinite linear;
+}
+.m div::before{
+  display: inline-block;
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: url('images/clockBg.svg');
+  opacity: .4;
+}
+
+/* Hour */
+.h{
+  height: auto;
+  width: 40%;
+  aspect-ratio: 1/1;
+  background: url('images/texture.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--foreground);
+  border-radius: 100%;
+  z-index: 3;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+/* Roatate Animation */
+@keyframes second{
+    from {
+      transform:rotate(var(--sStart));
+    }
+    to {
+      transform:rotate(var(--sEnd));
+    }
+  }
+  
+  @keyframes minute{
+    from {
+      transform:rotate(var(--mStart));
+    }
+    to {
+      transform:rotate(var(--mEnd));
+    }
+  }

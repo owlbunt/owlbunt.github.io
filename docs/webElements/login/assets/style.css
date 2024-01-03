@@ -1,0 +1,183 @@
+:root{
+  --input-height:3.2rem;
+  --primary-color: rgb(40, 40, 43);
+}
+
+/* Body */
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', 'roboto';
+  background: url(images/background.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Container */
+.container{
+  height: 100vh;
+  width:100vw;
+  background: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:inherit;
+}
+
+/* Login Form */
+.loginForm{
+  height: 70vh;
+  max-height: 600px;
+  width: 100vw;
+  max-width: 400px;
+  position: relative;
+  padding: 0 1rem;
+}
+
+/* Form Heading*/
+.loginForm h2{
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+/* Input */
+.loginForm input{
+  height: var(--input-height);
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: calc(var(--input-height) + .5rem);
+  font-size:1rem;
+  border: 1px solid var(--primary-color);
+  background: rgba(40,40,43,0.1);
+  font-family: Montserrat;
+}
+
+/* User Name */
+.userName, .password {
+  position: relative;
+  margin: .8rem 0 0 0;
+  box-sizing: border-box;
+}
+
+/* Input Labels */
+.userName label, .password label{
+  position: absolute;
+  top:-1.5rem;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+/* Input Icons */
+.inputIcon{
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  height: var(--input-height);
+  width:auto;
+  aspect-ratio: 1/1;
+  background: var(--primary-color);
+  box-sizing: border-box;
+  padding: .8rem;
+}
+
+/* Password Show / Hide Button */
+.password .sh{
+  height: var(--input-height);
+  width: var(--input-height);
+  display: inline-block;
+  position:absolute;
+  right: 0;
+  padding: .8rem;
+  box-sizing: border-box;
+}
+
+/* Login Button */
+.loginBtn{
+  height: var(--input-height);
+  width: 100%;
+  border: 0;
+  background: var(--primary-color);
+  color: #fefefe;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin: 1.5rem 0 .8rem 0;
+  font-weight: 200;
+}
+
+/* Forgot Password */
+.forgotPass{
+  display: block;
+  width: 100%;
+  text-align: end;
+  text-decoration: none;
+  color: var(--primary-color);
+  opacity: .6;
+}
+
+/* Other Login Options */
+.others{
+  display: block;
+  position: relative;
+  background: inherit;
+  height: 2rem;
+  width: 100%;
+  margin: 1rem 0;
+}
+.others::before{
+  display: inline-block;
+  content: 'OR';
+  position: absolute;
+  padding: .2rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(var(--primary-color),0.5);
+  border-radius: 15%;
+  font-size: .8rem;
+  color: var(--primary-color);
+  background: #eee7df;
+  z-index: 2;
+}
+.others::after{
+  display: block;
+  content: '';
+  background-color: var(--primary-color);
+  width: 100%;
+  height: 1px;
+  position:relative;
+  top:50%;
+  transform: translateY(-50%);
+  opacity: .2;
+}
+
+.othersIcon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  width: 100%;
+}
+
+.othersIcon .icon{
+  display: inline;
+  border-radius: 100%;
+  padding: .1rem;
+  box-sizing: border-box;
+  border: 1px solid var(--primary-color);
+  height: 100%;
+  width: auto;
+  aspect-ratio: 1/1;
+  margin: 0 .3rem;
+  opacity: .7;
+}
+
+/* Create Account */
+.createAc{
+  display:block;
+  margin: 2rem 0;
+}
+.createAc a{
+  text-decoration: none;
+  text-transform: uppercase;
+}

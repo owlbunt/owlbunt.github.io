@@ -1,0 +1,129 @@
+/* Define Custom CSS Variables */
+:root{
+  --primaryColor :#001224;
+  --textColor :#b1b1b1;
+}
+
+/* BODY Styles */
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: var(--primaryColor);
+  height: 100vh;
+  width: 100vw;
+  font-family: roboto;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* CONTAINER Styles */
+.container{
+  height: 100%;
+  width: 100%;
+  background: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* GAME BOARD Styles */
+.circle{
+  height: auto;
+  width: 100vw;
+  max-width: 400px;
+  aspect-ratio: 1/1;
+  border: 2px solid var(--textColor); 
+  background:#fefefe;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  margin: 1rem;
+}
+
+/* INNER CIRCLE Styles */
+.innerCircle{
+  height: 40%;
+  width: auto;
+  aspect-ratio: 1/1;
+  background: var(--primaryColor);
+  position: absolute;
+  z-index: 5;
+  border-radius: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--textColor);
+}
+
+/* Start Button Styles */
+.start{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 85%;
+  aspect-ratio: 1/1;
+  background: #000935;
+  border-radius: 100%;
+  color: #e0e0e0;
+  font-size: 100%;
+  z-index: 5;
+  transition: all .5s;
+}
+.start:active{
+  filter: brightness(5);
+}
+
+/* SCORE Styles */
+.score{
+  display:flex;
+  height: 85%;
+  aspect-ratio: 1/1;
+  background: #000935;
+  z-index: 3;
+  position: absolute;
+  border-radius: 100%;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+/* COLORS Styles */
+.clr{
+  display: block;
+  height: 50%;
+  width: auto;
+  aspect-ratio: 1/1;
+  background: inherit;
+  border: 1px solid var(--textColor);
+  box-sizing: border-box;
+  pointer-events: none;
+  filter: contrast(2.5);
+}
+.red{
+  background: #990000;
+  border-left:0;
+  border-top: 0;
+}
+.blue{
+  background: #000099;
+  border-top: 0;
+  border-right: 0;
+}
+.yellow{
+  background: #999900;
+  border-left: 0;
+  border-bottom: 0;
+}
+.green{
+  background:#008000;
+  border-right: 0;
+  border-bottom: 0;
+}

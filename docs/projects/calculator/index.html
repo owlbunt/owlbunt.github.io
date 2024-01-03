@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <!-- Math.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.7.2/math.min.js"></script>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="assets/style.css">
+
+</head>
+<body>
+    <!-- Main Contaiiner -->
+    <div class="container-fulid">
+        <!-- Calculator Body -->
+        <div class="calBody">
+            <!-- Top section -->
+            <section class="top bg-dark d-flex align-items-end justify-content-end">
+                <input class="text-white" type="text" placeholder="0">
+            </section>
+            <!-- Bottom Section -->
+            <section class="bottom">
+                <!-- Calculator Buttons -->
+                <div class="buttons">
+                    <div class="btnRow">
+                        <button class="button ac" style="background: #9f9f9f; font-size: 1.6rem; color: black;">AC</button>
+                        <button class="button clear" value="" style="background: #9f9f9f; font-size: 1.6rem ;color: black;">C</button>
+                        <button class="button numOpr" value="%" style="background: #9f9f9f; font-size: 1.6rem; color: black;">%</button>
+                        <button class="button numOpr" value="/" style="background: #f69906; font-size: 2.2rem">÷</button>
+                    </div>
+                    <div class="btnRow">
+                        <button class="button numOpr" value="7">7</button>
+                        <button class="button numOpr" value="8">8</button>
+                        <button class="button numOpr" value="9">9</button>
+                        <button class="button numOpr" value="*" style="background: #f69906; font-size: 2.2rem">×</button>
+                    </div>
+                    <div class="btnRow">
+                        <button class="button numOpr" value="4">4</button>
+                        <button class="button numOpr" value="5">5</button>
+                        <button class="button numOpr" value="6">6</button>
+                        <button class="button numOpr" value="-" style="background: #f69906; font-size:3rem;">-</button>
+                    </div>
+                    <div class="btnRow">
+                        <button class="button numOpr" value="1">1</button>
+                        <button class="button numOpr" value="2">2</button>
+                        <button class="button numOpr" value="3">3</button>
+                        <button class="button numOpr" value="+" style="background: #f69906; font-size: 2.4rem">+</button>
+                    </div>
+                    <div class="btnRow"> 
+                        <button class="button numOpr" value="0" style="aspect-ratio: 2/1; width: 50%; border-radius: 4rem;">0</button>
+                        <button class="button numOpr" value=".">.</button>
+                        <button class="button equal" style="background: #f69906;">=</i></button>
+                    </div>
+                    </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- External Js -->
+    <script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Dice Game</title>
+
+  <!-- BootStrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+  <!-- Mian Container -->
+  <div class="container row">
+
+    <!-- Section One -->
+    <div class="sectionOne col col-12 col-sm-6">
+      <span class="points playerOnePoints"> 0 </span>
+      <div class="diceOne">
+        <img src="assets/images/dice6.png" alt="Dice Image">
+      </div>
+    </div>
+
+    <!-- Section Two -->
+    <div class="sectionTwo col col-12 col-sm-6">
+      <span class="points playerTwoPoints"> 0 </span>
+      <div class="diceTwo">
+        <img src="assets/images/dice6.png" alt="Dice Image">
+      </div>
+    </div>
+
+    <!-- Shuffle Box -->
+    <div class="diceBox" onclick="dice()">
+      <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="100%" height="100%" viewBox="0 0 512.000000 512.000000"
+ preserveAspectRatio="xMidYMid meet">
+<g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+fill="#000000" stroke="none">
+<path d="M2370 5113 c-371 -35 -653 -114 -961 -269 -245 -122 -444 -268 -655
+-478 -224 -225 -366 -423 -500 -701 -158 -326 -237 -650 -251 -1020 -15 -426
+73 -832 263 -1214 133 -269 271 -459 488 -677 221 -220 412 -357 681 -489 188
+-92 309 -137 500 -185 500 -126 1002 -102 1490 71 149 53 407 182 540 271 218
+145 454 362 606 558 347 446 541 985 543 1510 l1 155 -34 63 c-38 69 -80 110
+-151 144 -66 32 -196 31 -265 -2 -64 -31 -124 -92 -154 -155 -20 -41 -25 -75
+-32 -188 -10 -165 -22 -262 -49 -377 -84 -355 -258 -669 -514 -926 -463 -463
+-1128 -658 -1766 -517 -363 80 -683 255 -946 517 -407 406 -613 980 -554 1546
+70 676 480 1254 1095 1546 657 312 1440 219 2012 -239 l65 -52 -254 -5 c-252
+-5 -253 -5 -310 -33 -190 -93 -241 -341 -102 -496 26 -29 69 -62 102 -78 l57
+-28 630 0 c598 0 633 1 680 19 65 26 147 103 176 169 l24 52 0 630 0 630 -33
+67 c-60 123 -164 184 -302 176 -121 -7 -214 -69 -271 -178 -22 -41 -24 -60
+-27 -217 -2 -95 -6 -173 -8 -173 -3 0 -39 26 -82 59 -445 339 -1009 526 -1567
+519 -71 0 -146 -3 -165 -5z"/></g></svg>
+    </div>
+  </div>
+  
+
+
+<script src="assets/script.js"></script>
+</body>
+</html>

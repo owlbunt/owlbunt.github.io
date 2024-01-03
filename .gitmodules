@@ -1,0 +1,6 @@
+[submodule "docs/frontEndMentor"]
+	path = docs/frontEndMentor
+	url = https://github.com/owlbunt/frontEndMentor.git
+[submodule "docs/projects/ticTacToe"]
+	path = docs/projects/ticTacToe
+	url = https://github.com/owlbunt/ticTacToe.git

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <!-- [ External CSS ] -->
+    <link rel="stylesheet" href="assets/style.css"> 
+
+    <!-- [ Internal CSS ] -->
+    <style>
+        /* Menu Active */
+        .menuItem:nth-child(3)::before{content:'';display:inline-block;position:absolute;bottom:-5px;height:1px;width:100%;background:var(--tealGreen);border-radius:100%}
+    </style>
+</head>
+<body>
+    <!-- [ Header Section ] -->
+    <header>
+        <script>
+            // Fetch and insert header.html file
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector('header').innerHTML = data;
+                });
+        </script>
+    </header>
+
+    <!-- [ Main ] -->
+    <main id="events">
+        <!-- [ Section One ] -->
+        <section class="sectionOne">
+            <!-- [Background Image ] -->
+            <img src="assets/images/dummyBackgroundOne.jpg" alt="Background Image">
+            <div class="content">
+                <h2>Events</h2>
+                <p><b>We can be fun too, you know!</b> <br>From workshops to conferences, stay informed and don't miss the action about transformative technologies, processes, and methodologies shaping the future.</p>
+            </div>
+        </section>
+
+        <!-- [Section Two ] -->
+        <section class="sectionTwo">
+            <h2>Upcoming Events</h2>
+            <span>Stay on the lookout!</span>
+        </section>
+    </main>
+</body>
+</html>

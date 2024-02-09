@@ -1,0 +1,164 @@
+/* Universal Values */
+:root{
+    --background: #070715;
+    --cyan : #00ffff;
+    --cyanLight : #00ffff50;
+}
+
+/* Body */
+body {
+    background: url(https://i.ibb.co/6Rb0v4T/background-Img.jpg);
+    padding: 0;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: grid;
+    place-items: center;
+    height: 100dvh;
+    width: 100dvw;
+    background-color: var(--background);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+/* Main Container */
+.container {
+    border: 1px solid var(--cyanLight);
+    border-radius: 10px;
+    padding: 30px;
+    width:calc(100% - 40px);
+    max-width: 350px;
+    background-color: #0707153e;
+    backdrop-filter: blur(10px);
+    box-sizing: border-box;
+}
+
+/* Heading */
+.heading {
+    color: white;
+    margin: 20px 0 40px 0;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-size:2.2rem;
+}
+.heading::after{
+    content: '';
+    background: var(--cyan);
+    height: 10px;
+    width: 10px;
+    border-radius: 100%;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+/* Input */
+.loginForm input {
+    box-sizing: border-box;
+    border-radius: 20px;
+    background: inherit;
+    border: 1px solid var(--cyanLight);
+    padding: 12px 40px;
+    color: #fafafc;
+    font-size: 14px;
+    width: 100%;
+    position: relative;
+}
+
+/* Input Icons */
+.loginForm .userName, .loginForm .password{
+    margin-bottom: 15px;
+    position: relative;
+}
+.userName svg, .password svg{
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+    stroke: var(--cyanLight);
+    height: 16px;
+    width: 16px;
+}
+.password .showPass{
+    right: 15px;
+    left: auto;
+    cursor: pointer;
+}
+.password .showPass.active{
+    stroke: var(--cyan);
+}
+
+.loginForm input::before{
+    content: 'qssssss';
+    display: inline-block;
+    background: red;
+}
+
+/* Logi Button */
+.loginForm .loginBtn{
+    margin: 10px 0 20px;
+    padding: 12px;
+    width: 100%;
+    border-radius:20px;
+    background:var(--cyanLight);
+    color: #fafafcbc;
+    font-size: 14px;
+    letter-spacing: 2px;
+    border: 0;
+    transition: all .3s ease;
+    cursor: not-allowed;
+}
+.loginBtn.active{
+    background: var(--cyan);
+    color: var(--background);
+    cursor: pointer;
+}
+
+/* Help Section */
+.helpSection{
+    display: flex;
+    justify-content: space-between;
+}
+.helpSection a{
+    text-decoration: none;
+    color: #fafafcbd;
+    font-size: 14px;
+}
+.helpSection a:hover{
+    color: var(--cyan);
+}
+
+/* Social media icon */
+.socialMenu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0 0;
+}
+.socialIcon{
+    padding: 5px;
+    height: 22px;
+    background: inherit;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    display: grid;
+    place-items: center;
+    margin: 10px 5px;
+    border: 1px solid var(--cyanLight);
+    transition: all .3s ease;
+}
+.socialIcon svg{
+    height: 16px;
+    width: 16px;
+    fill:var(--cyan);
+    stroke: var(--cyan);
+    stroke-width: 2px;
+}
+.socialIcon:hover{
+    background: var(--cyan);
+}
+.socialIcon:hover svg{
+    fill: var(--background);
+    stroke: var(--background);
+}

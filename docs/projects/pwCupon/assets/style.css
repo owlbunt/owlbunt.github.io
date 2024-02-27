@@ -1,0 +1,54 @@
+/* Root Values */
+:root{
+
+}
+
+/* Body */
+body{
+    height: 100dvh;
+    width: 100dvw;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Main Body */
+main{
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+/* Articles */
+article{
+    /* background: red; */
+    border-radius: .5rem;
+}
+article .thmb{
+    aspect-ratio: 16/9;
+    height: auto;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+article .postTitle{
+    font-size: 1.2rem;
+}
+
+
+
+/* Responsive */
+@media screen and (min-width:480px) {
+    main{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    main{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PW Courses - Learn with Discounts</title>
+  <link rel="stylesheet" href="style1.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+
+<body>
+  <nav>
+     <div class="menu-icon">
+        <span class="fas fa-bars"></span>
+     </div>
+     <div class="logo">
+        PW Courses
+     </div>
+     <div class="nav-items">
+        <li><a href="nav.html">Home</a></li>
+        <li><a href="/skillcourse.html">Skill Course</a></li>
+        <li><a href="#">Contact Us</a></li>
+       <li><a href="#">Privacy Policy</a></li>
+        
+     </div>
+     <div class="search-icon">
+        <span class="fas fa-search"></span>
+     </div>
+     <div class="cancel-icon">
+        <span class="fas fa-times"></span>
+     </div>
+     <form action="#">
+        <input type="search" class="search-data" placeholder="Search" required>
+        <button type="submit" class="fas fa-search"></button>
+     </form>
+  </nav>
+  <div class="main-container">
+    <section class="container1">
+      <div class="intro">
+        <h1>Unlock Your Learning Journey</h1>
+        <p>Explore premium courses from PW, Unacademy, and Udemy with exclusive discounts.</p>
+        <a href="skillcourse.html" target="_blank" class="cta-btn">Join Telegram Channel</a>
+      <br></div>
+      <div class="coupon-section">
+        <div class="coupon">
+          <input class="coupon-text" type="text" readonly="true" value="AK150" id="select-coupon">
+          <button class="coupon-button" onclick="copyCoupon(this)">Copy</button></br>
+       <br> </div>
+        <div class="coupon">
+          <input class="coupon-text" type="text" readonly="true" value="PW2023" id="select-coupon">
+          <button class="coupon-button" onclick="copyCoupon(this)">Copy</button></br>
+        <br></div>
+        <a href="#allCouponsTable" class="all-coupons-btn">View All Coupons</a>
+      </div></br>
+ <div class="tble-of-contant">
+    <section class="table-of-content">
+        <h2>Table of Contents</h2>
+        <ul class="table-of-content-ul">
+          
+          <li class="table-of-content-li"><a href="#allCouponsTable">PW Latest Coupon Code</a></li>
+<li class="table-of-content-li"><a href="#allCouponsTable2">PW Skills Coupon Code</a></li>
+  <li class="table-of-content-li"><a href="#allCouponsTable">PW MBA Wallah Coupon</a></li>
+  <li class="table-of-content-li"><a href="#allCouponsTable">PW GATE Wallah Coupon Code</a></li>
+  <li class="table-of-content-li"><a href="#allCouponsTable2">PW IIT JAM Coupon Code</a></li>
+  <li class="table-of-content-li"><a href="#allCouponsTable2">PW CSIR NET Coupon Code</a></li>
+  <li class="table-of-content-li"><a href="#led">PW All Batch Coupons</a></li>
+  <li class="table-of-content-li"><a href="#hehe">How To Apply Pw Coupon Code?</a></li>
+    <li class="table-of-content-li"><a href="#huh">Additional Information</a></li>
+        </ul>
+      </section></div>
+<section class="image-placeholder">
+<div class="image-container">
+  <img src="p1.jpg" alt="Image 1"> 
+</div>
+</section>
+       <div class="tble-of-contant">
+ <section class="apply-coupon-section" id="hehe">
+        <h2>How to Apply PW Coupon Code:</h2>
+        <ul>
+          <li>Go to the <a href="https://www.pw.live/" target="_blank">Physics Wallah website</a> or <a href="https://play.google.com/store/apps/details?id=xyz.penpencil.physicswala&hl=en_US" target="_blank">app</a>.</li>
+          <li>Select the batch or course you want to buy.</li>
+          <li>Click on the “Buy Now” button.</li>
+        
+          
+          
+          <li>Enter the coupon code: <span id="coupon-code">AK150</span> in the coupon code field.</li>
+          <li>Click on the “Apply” button.</li>
+          <li>The discounted price will be displayed.</li>
+          <li>Click on the “Pay Now” button to complete the purchase.</li>
+        </ul>
+      </section></div>
+      <section class="image-placeholder">
+      <div class="image-container">
+        <img src="p2.jpg" alt="Image 2">
+        </div>
+         <div class="tble-of-contant">
+      <section class="coupon-info-section" id="huh">
+        <h2>Additional Information:</h2>
+        <ul>
+          <li>Coupon codes are case-sensitive, so make sure you enter them correctly.</li>
+          <li>Some coupon codes have expiration dates, so be sure to use them before they expire.</li>
+          <li>Not all coupon codes are valid for all batches or courses.</li>
+          <li>You can only use one coupon code per purchase.</li>
+        </ul>
+      </section></div>
+<section class="pw-coupons-table" id="allCouponsTable">
+  <h2>PW All Batch Coupons</h2>
+  <div class="table-container"> 
+    <table id="batchCouponsTable">
+      <thead>
+        <tr>
+          <th>Batch</th>
+          <th>Coupon Code</th>
+          <th>Discount Link</th> <!-- Change this line -->
+        </tr>
+      </thead>
+      <tbody id="batchCouponsBody"></tbody>
+    </table>
+    </section>
+<section class="image-placeholder">
+      <div class="image-container">
+        <img src="p3.jpg" alt="Image 3">
+      </div>
+      </section>
+<section class="pw-coupons-table2" id="allCouponsTable2">
+  <h2>PW All Batch Coupons</h2>
+  <div class="table-container2"> 
+    <table id="batchCouponsTable2">
+      <thead>
+        <tr>
+          <th>Batch</th>
+          <th>Coupon Code</th>
+          <th>Discount Link</th>
+        </tr>
+      </thead>
+      <tbody id="batchCouponsBody2"></tbody>
+    </table>
+  </div>
+</section>
+
+  
+   <div class="coupon-section" id="led">
+        <h1>PW CODES</h1>
+        <div class="coupon"> 
+          <p>Get Discount 👇 </p>
+          <input class="coupon-text" type="text" readonly="true" value="AK150" id="select-coupon">
+          <button class="coupon-button" onclick="copyCoupon(this)">Copy</button></br>
+       <br> </div>
+        <div class="coupon">
+          <p>NEET/JEE/SCHOOL BATCH</p>
+          <input class="coupon-text" type="text" readonly="true" value="AK150" id="select-coupon2">
+          <button class="coupon-button" onclick="copyCoupon(this)">Copy</button></br>
+        <br></div>
+        
+      
+
+<div class="coupon-section">
+  
+        <div class="coupon"> 
+          <p >PW SKILLS MAIN COUPON</p>
+          <input class="coupon-text" type="text" readonly="true" value="CPCA0516" id="select-coupon">
+          <button class="coupon-button" onclick="copyCoupon(this)">Copy</button></br>
+       <br> </div>
+        <div class="coupon">
+          <p>Main Coupon JEE/NEET</p>
+          <input class="coupon-text" type="text" readonly="true" value="AK150" id="select-coupon2">
+          <button class="coupon-button" onclick="copyCoupon(this)">Copy</button></br>
+        <br></div>
+<div class="coupon"id="1"> 
+  <h1>₹20000 courses 👇</h1>
+          <p class="az">Master Generative AI: Data Science Course</p>
+          <input class="coupon-text" type="text" readonly="true" value="CPCA0516AKA" id="select-coupon">
+          <button class="coupon-button" onclick="copyCoupon(this)">Copy</button></br>
+</div>
+
+<div class="coupon"id="2"> 
+          <p class="az">MERN Full Stack Development</p>
+          <input class="coupon-text" type="text" readonly="true" value="CPCA0516AKA" id="select-coupon">
+          <button class="coupon-button" onclick="copyCoupon(this)">Copy</button></br>
+</div>
+<div class="coupon"id="3"> 
+          <p class="az">Building Micro Services in Java for Cloud</p>
+          <input class="coupon-text" type="text" readonly="true" value="CPCA0516AKA" id="select-coupon">
+          <button class="coupon-button" onclick="copyCoupon(this)">Copy</button></br>
+</div>
+<div class="coupon"id="4"> 
+          <p class="az">Mastering Full Stack Data Analytics</p>
+          <input class="coupon-text" type="text" readonly="true" value="CPCA0516AKA" id="select-coupon">
+          <button class="coupon-button" onclick="copyCoupon(this)">Copy</button></br>
+</div>
+<div class="coupon"id="5"> 
+          <p class="az">Full Stack Data Science Pro </p>
+          <input class="coupon-text" type="text" readonly="true" value="CPCA0516AKA" id="select-coupon">
+          <button class="coupon-button" onclick="copyCoupon(this)">Copy</button></br>
+</div>
+<div class="coupon"id="6"> 
+          <p class="az"> Full Stack Web Development</p>
+          <input class="coupon-text" type="text" readonly="true" value="CPCA0516AKA" id="select-coupon">
+          <button class="coupon-button" onclick="copyCoupon(this)">Copy</button></br>
+</div>
+  <h1>₹3500 batch 👉CPCA0516👈</h1>
+<div class="coupon"id="7"> 
+          <p class="az">Pw decode + java dsa</p>
+          <input class="coupon-text" type="text" readonly="true" value="CPCA0516" id="select-coupon">
+          <button class="coupon-button" onclick="copyCoupon(this)">Copy</button></br>
+</div>
+  <div class="coupon"id="8"> 
+          <p class="az">Decode full stack web development</p>
+          <input class="coupon-text" type="text" readonly="true" value="CPCA0516" id="select-coupon">
+          <button class="coupon-button" onclick="copyCoupon(this)">Copy</button></br>
+  </div>
+  <div class="coupon"id="9"> 
+          <p class="az">System design </p>
+          <input class="coupon-text" type="text" readonly="true" value="CPCA0516" id="select-coupon">
+          <button class="coupon-button" onclick="copyCoupon(this)">Copy</button></br>
+  </div>
+<div class="coupon"id="10"> 
+          <p class="az">C++ with DSA</p>
+          <input class="coupon-text" type="text" readonly="true" value="CPCA0516" id="select-coupon">
+          <button class="coupon-button" onclick="copyCoupon(this)">Copy</button></br>
+</div>
+<div class="coupon"id="11"> 
+          <p class="az">Full stack web development 2.0</p>
+          <input class="coupon-text" type="text" readonly="true" value="CPCA0516" id="select-coupon">
+          <button class="coupon-button" onclick="copyCoupon(this)">Copy</button></br>
+</div>
+  <div class="coupon"id="12"> 
+          <p class="az">System design 2.0 </p>
+          <input class="coupon-text" type="text" readonly="true" value="CPCA0516" id="select-coupon">
+          <button class="coupon-button" onclick="copyCoupon(this)">Copy</button></br>
+  </div>
+<div class="coupon"id="13"> 
+          <p class="az">Java with DSA system design 2.0</p>
+          <input class="coupon-text" type="text" readonly="true" value="CPCA0516" id="select-coupon">
+          <button class="coupon-button" onclick="copyCoupon(this)">Copy</button></br>
+</div>
+      <script src="script.js"></script>
+
+</body>
+<!-- hue hue hue -->
+</html>

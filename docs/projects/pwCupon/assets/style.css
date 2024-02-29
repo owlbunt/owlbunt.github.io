@@ -10,7 +10,6 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
 }
 
 /* Heaeder */
@@ -21,4 +20,49 @@ body{
     outline: none;
     box-shadow: none;
     border: none;
+}
+
+/* Post Section */
+.content{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* Post*/
+.post{
+  box-sizing: border-box;
+  align-items: center;
+  overflow: hidden;
+}
+.postThmb{
+  background:;
+  width: 100%;
+  border-radius: px;
+}
+
+.postTitle{
+  font-weight: Normal;
+  font-size: 1.2rem;
+}
+
+
+/* Resposnsive */
+@media screen and (min-width:576px){
+  .content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width:768px){
+  .content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media screen and (min-width:992px){
+  .content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }

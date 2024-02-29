@@ -21,64 +21,62 @@
     <meta name="twitter:title" content="Your Page Title Here">
     <meta name="twitter:description" content="Brief description of your page content">
     <meta name="twitter:image" content="url_to_your_image">
-    
+
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+        crossorigin="anonymous">
 
     <!-- CSS stylesheets -->
     <link rel="stylesheet" href="assets/style.css">
 </head>
-<body class="container-flui">
-     <!-- Header -->
-     <header class="mb-4">
+
+<body>
+    <!-- Header -->
+    <header class="mb-4">
+        <!-- [ Import Header ]-->
         <script>
-            fetch('header.html')
-            .then(response => response.text())
-            .then(header => {
+            fetch('header.html').then(response => response.text()).then(header => {
                 document.querySelector('header').innerHTML = header;
-            })
-            .catch(error => {
+            }).catch(error => {
                 console.error('Error fetching the file: ', error);
             });
         </script>
     </header>
-    
+
     <!-- Main container -->
-    <main class="px-4">
+    <main class="px-4 overflow-hidden">
         <!-- [Hero Section] -->
-        <section class="heroSection">
+        <section class="heroSection my-5 pt-4">
             <!-- [ Search Bar ] -->
             <form class="d-flex mt-3 mt-lg-0" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
+                <input class="form-control me-2" type="search" id="searchInput" placeholder="Search"
+                    aria-label="Search">
+                <button class="btn btn-outline-dark" type="button" id="searchButton">Search</button>
+            </form>
         </section>
 
-        <!-- [ Main Content ] -->
-        <section class="content">
-            <!-- Post -->
-            <article class="post">
-                <img src="assets/images/pwLogo.svg" alt="" class="thmb">
-                <h2 class="postTitle">Title Goes Here</h2>
-                <button class="copyCoupon" value="1234">Copy Code</button>
-            </article>
-
-            
-
+        <!-- [ Post Section ] -->
+        <section id=posts class=content>
+            <!-- Post Will Apper Here -->
         </section>
+
     </main>
 
     <!-- Footer -->
-    <footer class="px-4 row mt-4 pt-4 border-top bg-body-tertiary">
+    <footer class="px-4 mt-4 pt-4 border-top bg-body-tertiary d-md-flex flex-wrap">
         <!-- About US -->
         <div class="about col col-12 col-md-6 col-lg-4">
             <h2>About Us</h2>
-            <p>This platform offers a comprehensive collection of course reviews, coupon codes, deals, and discounts. Our team scours the web to compare prices and secure the best offers available for a diverse range of courses.</p>
+            <p>This platform offers a comprehensive collection of course reviews, coupon codes, deals, and
+                discounts. Our team scours the web to compare prices and secure the best offers available for a
+                diverse range of courses.</p>
         </div>
         <!-- Contact US -->
         <div class="contact col col-12 col-md-6 col-lg-4">
             <h2>Contact Us</h2>
-            <p>If you have any questions about the site or need assistance with any other matter, please don't hesitate to contact us at support@mail.com.</p>
+            <p>If you have any questions about the site or need assistance with any other matter, please don't
+                hesitate to contact us at support@mail.com.</p>
         </div>
         <!-- Social Media -->
         <div class="social col col-12 col-lg-4">
@@ -90,8 +88,10 @@
     </footer>
 
     <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <!-- External JS -->
-    <script src="script.js"></script>
+    <script src="assets/script.js"></script>
 </body>
 </html>

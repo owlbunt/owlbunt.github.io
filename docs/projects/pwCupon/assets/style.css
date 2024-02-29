@@ -1,8 +1,3 @@
-/* Root Values */
-:root{
-
-}
-
 /* Body */
 body{
     height: 100dvh;
@@ -10,6 +5,7 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 /* Heaeder */
@@ -20,6 +16,16 @@ body{
     outline: none;
     box-shadow: none;
     border: none;
+}
+
+.headerLogo{
+  height: 2.5rem;
+  margin-right: .5rem;
+}
+
+/* search */
+#search{
+ width: 100%;
 }
 
 /* Post Section */
@@ -47,22 +53,29 @@ body{
 }
 
 
+
 /* Resposnsive */
 @media screen and (min-width:576px){
   .content{
     display: grid;
     grid-template-columns: 1fr 1fr;
-  }
+  }   
 }
 @media screen and (min-width:768px){
   .content{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
+  #search{
+    width: 50%;
+  }
 }
 @media screen and (min-width:992px){
   .content{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  #search{
+    width: 40%;
   }
 }

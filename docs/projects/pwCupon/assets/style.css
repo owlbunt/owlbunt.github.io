@@ -1,3 +1,6 @@
+::-webkit-scrollbar {
+  width: 0px;
+}
 /* Body */
 body{
     height: 100dvh;
@@ -26,6 +29,9 @@ body{
 /* search */
 #search{
  width: 100%;
+ position: relative;
+ left:50%;
+ transform: translateX(-50%);
 }
 
 /* Post Section */
@@ -46,13 +52,23 @@ body{
   width: 100%;
   border-radius: px;
 }
-
 .postTitle{
   font-weight: Normal;
   font-size: 1.2rem;
 }
 
-
+/* Coupons */
+.allCoupons{
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.allCoupons .couponCode{
+  box-sizing: border-box;
+  display: block;
+  height: auto;
+}
 
 /* Resposnsive */
 @media screen and (min-width:576px){
@@ -60,12 +76,22 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr;
   }   
+  .allCoupons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }   
+  
 }
 @media screen and (min-width:768px){
   .content{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
+  .allCoupons{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+  }   
   #search{
     width: 50%;
   }
@@ -75,6 +101,11 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
+  .allCoupons{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }   
+  
   #search{
     width: 40%;
   }

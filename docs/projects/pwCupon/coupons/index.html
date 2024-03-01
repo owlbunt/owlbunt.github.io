@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coupons</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+        crossorigin="anonymous">
+    <!-- CSS stylesheets -->
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="mb-4">
+        <!-- [ Import Header ]-->
+        <script>
+            fetch('../header.html').then(response => response.text()).then(header => {
+                document.querySelector('header').innerHTML = header;
+            }).catch(error => {
+                console.error('Error fetching the file: ', error);
+            });
+        </script>
+    </header>
+    
+    <!-- Main  -->
+    <main class="mt-5 pt-5 px-3 text-center">
+        <!-- Top Section -->
+        <section class="topSection">
+            <div class="text-center">
+                <h1>Unlock Your Learning Journey</h1>
+                <p class="text-muted">Explore premium courses from PW, Unacademy, and Udemy with exclusive discounts.</p>
+                <a href="#" class="btn btn-dark rounded-pill px-4 py-2 mt-3">Join Telegram</a>
+            </div>
+
+            <!-- [ Search Bar ] -->
+            <form id="search" class="d-flex mt-5" role="search">
+                <input class="form-control me-2 rounded-4" type="search" id="searchInput" placeholder="What are you looking for?"
+                    aria-label="Search">
+                <button class="btn btn-outline-dark rounded-4" type="button" id="searchButton">Search</button>
+            </form>
+
+            <!-- <div class="howToUse">
+                <h2>How to Apply Coupon Code?</h2>
+            </div> -->
+        </section>
+
+
+        <!-- Coupons Section -->
+        <section class="allCoupons mt-5">
+            <!-- Coupon -->
+            <div class="couponCode bg-body-tertiary p-4 rounded-3 border">
+                <p class="text-muted">NEET/JEE/School Batch</p>
+                <input class="rounded-3 border p-1 px-2 w-50" type="text" name="coupon" id="coupon" value="AKBE50" readonly>
+                <button class="copyCode border bg-dark text-white rounded-3 py-1 px-3 ms-1">Copy</button>
+            </div>
+
+            <!-- Coupon -->
+            <div class="couponCode bg-body-tertiary p-4 rounded-3 border">
+                <p class="text-muted">PW Skills Main Coupon</p>
+                <input class="rounded-3 border p-1 px-2 w-50" type="text" name="coupon" id="coupon" value="CPCA0516" readonly>
+                <button class="copyCode border bg-dark text-white rounded-3 py-1 px-3 ms-1">Copy</button>
+            </div>
+
+            <!-- Coupon -->
+            <div class="couponCode bg-body-tertiary p-4 rounded-3 border">
+                <p class="text-muted">Main Coupon JEE/NEET</p>
+                <input class="rounded-3 border p-1 px-2 w-50" type="text" name="coupon" id="coupon" value="AK150" readonly>
+                <button class="copyCode border bg-dark text-white rounded-3 py-1 px-3 ms-1">Copy</button>
+            </div>
+
+            <!-- Coupon -->
+            <div class="couponCode bg-body-tertiary p-4 rounded-3 border">
+                <p class="text-muted">Master Generative AI: Data Science Course</p>
+                <input class="rounded-3 border p-1 px-2 w-50" type="text" name="coupon" id="coupon" value="CPCA0516AKA" readonly>
+                <button class="copyCode border bg-dark text-white rounded-3 py-1 px-3 ms-1">Copy</button>
+            </div>
+
+            <!-- Coupon -->
+            <div class="couponCode bg-body-tertiary p-4 rounded-3 border">
+                <p class="text-muted">MERN Full Stack Development</p>
+                <input class="rounded-3 border p-1 px-2 w-50" type="text" name="coupon" id="coupon" value="CPCA0516AKA" readonly>
+                <button class="copyCode border bg-dark text-white rounded-3 py-1 px-3 ms-1">Copy</button>
+            </div>
+
+             <!-- Coupon -->
+             <div class="couponCode bg-body-tertiary p-4 rounded-3 border">
+                <p class="text-muted">Building Microservices in Java for Cloud</p>
+                <input class="rounded-3 border p-1 px-2 w-50" type="text" name="coupon" id="coupon" value="CPCA0516AKA" readonly>
+                <button class="copyCode border bg-dark text-white rounded-3 py-1 px-3 ms-1">Copy</button>
+            </div>
+            
+             <!-- Coupon -->
+             <div class="couponCode bg-body-tertiary p-4 rounded-3 border">
+                <p class="text-muted">Mastering Full Stack Data Analytics</p>
+                <input class="rounded-3 border p-1 px-2 w-50" type="text" name="coupon" id="coupon" value="CPCA0516AKA" readonly>
+                <button class="copyCode border bg-dark text-white rounded-3 py-1 px-3 ms-1">Copy</button>
+            </div>
+            
+             <!-- Coupon -->
+             <div class="couponCode bg-body-tertiary p-4 rounded-3 border">
+                <p class="text-muted">Full Stack Data Science Pro</p>
+                <input class="rounded-3 border p-1 px-2 w-50" type="text" name="coupon" id="coupon" value="CPCA0516AKA" readonly>
+                <button class="copyCode border bg-dark text-white rounded-3 py-1 px-3 ms-1">Copy</button>
+            </div>
+            
+             <!-- Coupon -->
+             <div class="couponCode bg-body-tertiary p-4 rounded-3 border">
+                <p class="text-muted">Full Stack Web Development</p>
+                <input class="rounded-3 border p-1 px-2 w-50" type="text" name="coupon" id="coupon" value="CPCA0516AKA" readonly>
+                <button class="copyCode border bg-dark text-white rounded-3 py-1 px-3 ms-1">Copy</button>
+            </div>
+            
+             <!-- Coupon -->
+             <div class="couponCode bg-body-tertiary p-4 rounded-3 border">
+                <p class="text-muted">PW Decode + Java DSA</p>
+                <input class="rounded-3 border p-1 px-2 w-50" type="text" name="coupon" id="coupon" value="CPCA0516" readonly>
+                <button class="copyCode border bg-dark text-white rounded-3 py-1 px-3 ms-1">Copy</button>
+            </div>
+            
+             <!-- Coupon -->
+             <div class="couponCode bg-body-tertiary p-4 rounded-3 border">
+                <p class="text-muted">Decode Full Stack Web Development</p>
+                <input class="rounded-3 border p-1 px-2 w-50" type="text" name="coupon" id="coupon" value="CPCA0516" readonly>
+                <button class="copyCode border bg-dark text-white rounded-3 py-1 px-3 ms-1">Copy</button>
+            </div>
+            
+             <!-- Coupon -->
+             <div class="couponCode bg-body-tertiary p-4 rounded-3 border">
+                <p class="text-muted">System Design</p>
+                <input class="rounded-3 border p-1 px-2 w-50" type="text" name="coupon" id="coupon" value="CPCA0516" readonly>
+                <button class="copyCode border bg-dark text-white rounded-3 py-1 px-3 ms-1">Copy</button>
+            </div>
+            
+             <!-- Coupon -->
+             <div class="couponCode bg-body-tertiary p-4 rounded-3 border">
+                <p class="text-muted">C++ with Data Structures and Algorithms</p>
+                <input class="rounded-3 border p-1 px-2 w-50" type="text" name="coupon" id="coupon" value="CPCA0516" readonly>
+                <button class="copyCode border bg-dark text-white rounded-3 py-1 px-3 ms-1">Copy</button>
+            </div>
+            
+             <!-- Coupon -->
+             <div class="couponCode bg-body-tertiary p-4 rounded-3 border">
+                <p class="text-muted">Full Stack Web Development 2.0</p>
+                <input class="rounded-3 border p-1 px-2 w-50" type="text" name="coupon" id="coupon" value="CPCA0516" readonly>
+                <button class="copyCode border bg-dark text-white rounded-3 py-1 px-3 ms-1">Copy</button>
+            </div>
+            
+             <!-- Coupon -->
+             <div class="couponCode bg-body-tertiary p-4 rounded-3 border">
+                <p class="text-muted">System Design 2.0</p>
+                <input class="rounded-3 border p-1 px-2 w-50" type="text" name="coupon" id="coupon" value="CPCA0516" readonly>
+                <button class="copyCode border bg-dark text-white rounded-3 py-1 px-3 ms-1">Copy</button>
+            </div>
+            
+             <!-- Coupon -->
+             <div class="couponCode bg-body-tertiary p-4 rounded-3 border">
+                <p class="text-muted">Java with DSA: System Design 2.0</p>
+                <input class="rounded-3 border p-1 px-2 w-50" type="text" name="coupon" id="coupon" value="AK150" readonly>
+                <button class="copyCode border bg-dark text-white rounded-3 py-1 px-3 ms-1">Copy</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <!-- [ Import Footer ]-->
+        <script>
+            fetch('../footer.html').then(response => response.text()).then(footer => {
+                document.querySelector('footer').innerHTML = footer;
+            }).catch(error => {
+                console.error('Error fetching the file: ', error);
+            });
+        </script>
+    </footer>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-- External JS -->
+    <script src="../assets/script.js"></script>
+</body>
+</html>

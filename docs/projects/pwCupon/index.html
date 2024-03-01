@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Page Title Here</title>
+    <title>PW Coupon Code</title>
     <meta name="description" content="Brief description of your page content">
-    <meta name="keywords" content="keywords, related, to, your, content">
+    <meta name="keywords" content="pw coupon code, pw store coupon code, pw coupon code for study material, pw coupon code, pw coupon code">
     <meta name="author" content="Your Name">
 
     <!-- Open Graph meta tags for social media -->
@@ -26,7 +26,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
         crossorigin="anonymous">
-
     <!-- CSS stylesheets -->
     <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -62,30 +61,22 @@
             <!-- Post Will Apper Here -->
         </section>
 
+        <!-- All Coupons Code -->
+        <div class="text-center">
+             <a href="../coupons/" class="btn btn-dark rounded-4 my-5 px-3"> View All Coupons</a>
+        </div>
     </main>
 
     <!-- Footer -->
-    <footer class="px-4 mt-4 pt-4 border-top bg-body-tertiary d-md-flex flex-wrap">
-        <!-- About US -->
-        <div class="about col col-12 col-md-6 col-lg-4">
-            <h2>About Us</h2>
-            <p class="text-muted">This platform offers a comprehensive collection of course reviews, coupon codes, deals, and
-                discounts. Our team scours the web to compare prices and secure the best offers available for a
-                diverse range of courses.</p>
-        </div>
-        <!-- Contact US -->
-        <div class="contact col col-12 col-md-6 col-lg-4">
-            <h2>Contact Us</h2>
-            <p class="text-muted">If you have any questions about the site or need assistance with any other matter, please don't
-                hesitate to contact us at support@mail.com.</p>
-        </div>
-        <!-- Social Media -->
-        <div class="social col col-12 col-lg-4">
-            <h2>Follow Us</h2>
-            <a href="">Youtube</a>
-            <a href="">Instagram</a>
-            <a href="">facebook</a>
-        </div>
+    <footer>
+        <!-- [ Import Footer ]-->
+        <script>
+            fetch('footer.html').then(response => response.text()).then(footer => {
+                document.querySelector('footer').innerHTML = footer;
+            }).catch(error => {
+                console.error('Error fetching the file: ', error);
+            });
+        </script>
     </footer>
 
     <!-- Bootstrap -->

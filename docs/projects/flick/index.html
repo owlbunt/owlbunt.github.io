@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit to Google Sheets</title>
+    <script src="https://apis.google.com/js/api.js"></script>
+</head>
+<body>
+    <form id="myForm">
+        <input type="text" id="name" name="name" placeholder="Name" required>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        const CLIENT_ID = '667486910577-1ipraavpo3bbd5n9gks2iivda7f177ev.apps.googleusercontent.com'; // Replace with your OAuth 2.0 Client ID
+        const SHEET_ID = '1YMO-7v4V6kk9penJxzHaMs5bLxHvCIeugv1tkkJEgB0'; // Replace with your Google Sheet ID
+        const SCOPE = 'https://www.googleapis.com/auth/spreadsheets';
+
+        function initGapi() {
+            gapi.load('client:auth2', initClient);
+        }
+
+        function initClient() {
+            gapi.client.init({
+                apiKey: '', // Not required for OAuth flow, can be left empty
+                clientId: CLIENT_ID,
+                scope: SCOPE,
+            }).then(() => {
+                console.log('Google API client initialized');
+            }).catch((error) => {
+                console.error('Error initializing Google API client:', error);
+            });
+        }
+
+        function handleAuth() {
+            gapi.auth2.getAuthInstance().signIn().then(() => {
+                console.log('User signed in');
+            }).catch((error) => {
+                console.error('Error signing in:', error);
+            });
+        }
+
+        function submitData() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+
+            const data = {
+                range: 'database!A:B',
+                majorDimension: 'ROWS',
+                values: [
+                    [name, email]
+                ]
+            };
+
+            gapi.client.sheets.spreadsheets.values.append({
+                spreadsheetId: SHEET_ID,
+                range: 'database!A:B',
+                valueInputOption: 'RAW',
+                resource: data
+            }).then(response => {
+                console.log('Data submitted:', response.result);
+            }).catch(error => {
+                console.error('Error submitting data:', error);
+            });
+        }
+
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            if (gapi.auth2.getAuthInstance().isSignedIn.get()) {
+                submitData();
+            } else {
+                handleAuth();
+            }
+        });
+
+        window.onload = initGapi;
+    </script>
+</body>
+</html>

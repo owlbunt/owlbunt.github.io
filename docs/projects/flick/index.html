@@ -3,79 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Submit to Google Sheets</title>
-    <script src="https://apis.google.com/js/api.js"></script>
+    <title>Chat App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        #chat-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #message-container {
+            height: 300px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        #message-container div {
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #4cae4c;
+        }
+        #name-phone-container {
+            display: none;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-    <form id="myForm">
-        <input type="text" id="name" name="name" placeholder="Name" required>
-        <input type="email" id="email" name="email" placeholder="Email" required>
-        <button type="submit">Submit</button>
-    </form>
+    <div id="chat-container">
+        <div id="name-phone-container">
+            <input type="text" id="name" placeholder="Enter your name" required>
+            <input type="text" id="phone" placeholder="Enter your phone number" required>
+            <input type="submit" id="start-chat" value="Start Chat">
+        </div>
+        <div id="message-container"></div>
+        <input type="text" id="message" placeholder="Type your message" required>
+        <input type="submit" id="send-message" value="Send Message">
+    </div>
 
     <script>
-        const CLIENT_ID = '667486910577-1ipraavpo3bbd5n9gks2iivda7f177ev.apps.googleusercontent.com'; // Replace with your OAuth 2.0 Client ID
-        const SHEET_ID = '1YMO-7v4V6kk9penJxzHaMs5bLxHvCIeugv1tkkJEgB0'; // Replace with your Google Sheet ID
-        const SCOPE = 'https://www.googleapis.com/auth/spreadsheets';
+        const databaseURL = "https://movetodatabase-default-rtdb.asia-southeast1.firebasedatabase.app/messages.json";
+        const messageContainer = document.getElementById("message-container");
+        const messageInput = document.getElementById("message");
+        const namePhoneContainer = document.getElementById("name-phone-container");
+        const nameInput = document.getElementById("name");
+        const phoneInput = document.getElementById("phone");
+        const startChatButton = document.getElementById("start-chat");
 
-        function initGapi() {
-            gapi.load('client:auth2', initClient);
+        // Show input for name and phone number
+        window.onload = function() {
+            namePhoneContainer.style.display = 'block';
+            messageInput.style.display = 'none';
+            document.getElementById("send-message").style.display = 'none';
         }
 
-        function initClient() {
-            gapi.client.init({
-                apiKey: '', // Not required for OAuth flow, can be left empty
-                clientId: CLIENT_ID,
-                scope: SCOPE,
-            }).then(() => {
-                console.log('Google API client initialized');
-            }).catch((error) => {
-                console.error('Error initializing Google API client:', error);
-            });
-        }
-
-        function handleAuth() {
-            gapi.auth2.getAuthInstance().signIn().then(() => {
-                console.log('User signed in');
-            }).catch((error) => {
-                console.error('Error signing in:', error);
-            });
-        }
-
-        function submitData() {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-
-            const data = {
-                range: 'database!A:B',
-                majorDimension: 'ROWS',
-                values: [
-                    [name, email]
-                ]
-            };
-
-            gapi.client.sheets.spreadsheets.values.append({
-                spreadsheetId: SHEET_ID,
-                range: 'database!A:B',
-                valueInputOption: 'RAW',
-                resource: data
-            }).then(response => {
-                console.log('Data submitted:', response.result);
-            }).catch(error => {
-                console.error('Error submitting data:', error);
-            });
-        }
-
-        document.getElementById('myForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            if (gapi.auth2.getAuthInstance().isSignedIn.get()) {
-                submitData();
+        startChatButton.onclick = function() {
+            if (nameInput.value && phoneInput.value) {
+                namePhoneContainer.style.display = 'none';
+                messageInput.style.display = 'block';
+                document.getElementById("send-message").style.display = 'inline-block';
+                fetchMessages(); // Fetch existing messages
             } else {
-                handleAuth();
+                alert("Please enter both your name and phone number.");
             }
-        });
+        };
 
-        window.onload = initGapi;
+        document.getElementById("send-message").onclick = function() {
+            const message = messageInput.value;
+            const name = nameInput.value;
+            const phone = phoneInput.value;
+
+            if (message) {
+                const messageData = {
+                    name: name,
+                    phone: phone,
+                    message: message,
+                    timestamp: new Date().toISOString()
+                };
+
+                // Post message to Firebase
+                fetch(databaseURL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(messageData),
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    displayMessage(name, message);
+                    messageInput.value = ""; // Clear input field
+                })
+                .catch(error => {
+                    console.error('Error submitting message:', error);
+                });
+            } else {
+                alert("Please type a message.");
+            }
+        };
+
+        function displayMessage(name, message) {
+            const messageElement = document.createElement("div");
+            messageElement.textContent = `${name}: ${message}`;
+            messageContainer.appendChild(messageElement);
+            messageContainer.scrollTop = messageContainer.scrollHeight; // Scroll to the bottom
+        }
+
+        function fetchMessages() {
+            fetch(databaseURL)
+            .then(response => response.json())
+            .then(data => {
+                messageContainer.innerHTML = ''; // Clear the container
+                for (const key in data) {
+                    if (data.hasOwnProperty(key)) {
+                        const msgData = data[key];
+                        displayMessage(msgData.name, msgData.message);
+                    }
+                }
+            })
+            .catch(error => console.error('Error fetching messages:', error));
+        }
+
+        // Refresh messages every 5 seconds
+        setInterval(fetchMessages, 5000);
     </script>
 </body>
 </html>
